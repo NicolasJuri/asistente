@@ -4,6 +4,7 @@ import pywhatkit
 import datetime
 import wikipedia
 import pyjokes
+import AVMSpeechMath as sm
 
 name = 'alexa'
 listener = sr.Recognizer()
@@ -58,6 +59,11 @@ def run():
 
     elif 'estás' in rec:
         talk('Muy bien y tú?')
+    
+    elif 'cuánto' in rec:
+    
+        res = sm.getResult(rec)
+        talk(res)
 
     else:
         talk("Retry")
